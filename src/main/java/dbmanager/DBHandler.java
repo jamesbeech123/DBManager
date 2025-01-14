@@ -1,3 +1,5 @@
+package dbmanager;
+
 import com.mongodb.client.MongoCollection;
 import org.bson.Document;
 import com.mongodb.client.MongoCursor;
