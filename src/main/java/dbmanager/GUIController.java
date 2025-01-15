@@ -9,7 +9,6 @@ public class GUIController {
     private final DBHandler dbHandler;
 
     public GUIController() {
-        // Initialize DBHandler with a collection (replace with your actual MongoDB setup)
         dbHandler = new DBHandler(MongoDBUtils.getCollection("testdb", "testcollection"));
     }
 
@@ -22,7 +21,7 @@ public class GUIController {
 
     @FXML
     public void onReadDocuments() {
-        dbHandler.readAll(); // Consider displaying results in a GUI table
+        dbHandler.read();
         showAlert("Info", "Check the console for retrieved documents.");
     }
 
@@ -30,7 +29,7 @@ public class GUIController {
     public void onUpdateDocument() {
         Document filter = new Document("name", "New User");
         Document update = new Document("age", 31);
-        dbHandler.updateOne(filter, update);
+        dbHandler.update(filter, update);
         showAlert("Success", "Document updated successfully!");
     }
 
