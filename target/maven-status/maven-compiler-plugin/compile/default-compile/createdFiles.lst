@@ -1,0 +1,4 @@
+dbmanager\DashboardGUI.class
+dbmanager\Main.class
+dbmanager\MongoDBConnection.class
+dbmanager\DBHandler.class

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="dbmanager.MainController">
+    <top>
+        <Label text="MongoDB Manager" style="-fx-font-size: 24;" BorderPane.alignment="CENTER"/>
+    </top>
+    <center>
+        <VBox spacing="10" alignment="CENTER">
+            <Button text="Create Document" onAction="#onCreateDocument"/>
+            <Button text="Read Documents" onAction="#onReadDocuments"/>
+            <Button text="Update Document" onAction="#onUpdateDocument"/>
+            <Button text="Delete Document" onAction="#onDeleteDocument"/>
+        </VBox>
+    </center>
+</BorderPane>
