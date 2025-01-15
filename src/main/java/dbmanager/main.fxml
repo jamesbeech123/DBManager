@@ -2,7 +2,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="dbmanager.MainController">
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="dbmanager.GUIController">
     <top>
         <Label text="MongoDB Manager" style="-fx-font-size: 24;" BorderPane.alignment="CENTER"/>
     </top>
