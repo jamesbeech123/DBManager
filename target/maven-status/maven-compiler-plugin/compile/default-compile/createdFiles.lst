@@ -2,3 +2,5 @@ dbmanager\DashboardGUI.class
 dbmanager\Main.class
 dbmanager\MongoDBConnection.class
 dbmanager\DBHandler.class
+dbmanager\GUIController.class
+dbmanager\MongoDBUtils.class
