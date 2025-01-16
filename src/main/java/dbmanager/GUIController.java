@@ -9,36 +9,10 @@ public class GUIController {
     private final DBHandler dbHandler;
 
     public GUIController() {
-        dbHandler = new DBHandler(MongoDBUtils.getCollection("testdb", "testcollection"));
+        dbHandler = new DBHandler();
     }
 
-    @FXML
-    public void onCreateDocument() {
-        Document doc = new Document("name", "New User").append("age", 30);
-        dbHandler.create(doc);
-        showAlert("Success", "Document created successfully!");
-    }
 
-    @FXML
-    public void onReadDocuments() {
-        dbHandler.read();
-        showAlert("Info", "Check the console for retrieved documents.");
-    }
-
-    @FXML
-    public void onUpdateDocument() {
-        Document filter = new Document("name", "New User");
-        Document update = new Document("age", 31);
-        dbHandler.update(filter, update);
-        showAlert("Success", "Document updated successfully!");
-    }
-
-    @FXML
-    public void onDeleteDocument() {
-        Document filter = new Document("name", "New User");
-        dbHandler.deleteOne(filter);
-        showAlert("Success", "Document deleted successfully!");
-    }
 
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
