@@ -12,17 +12,18 @@ import java.sql.Statement;
 public class DatabaseVisualizer  {
     public Parent createVisualizer() {
         WhiteboardComponent whiteboard = new WhiteboardComponent();
+        DBConnection db = new DBConnection();
 
         try (Connection conn = DBConnection.connect();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(
-                     "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';")) {
+                     "SELECT table_name FROM information_schema.tables WHERE table_schema = 'people';")) {
 
             double x = 50;
             double y = 50;
             while (rs.next()) {
                 String tableName = rs.getString("table_name");
-                TableNode tableNode = new TableNode(tableName);
+                TableNode tableNode = new TableNode(tableName, db.getColumnNames(tableName));
 
                 // Position nodes
                 tableNode.setLayoutX(x);
