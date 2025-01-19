@@ -7,7 +7,7 @@ public class DBConnection {
     private static final String USER = "databaseusername";
     private static final String PASSWORD = "databasepassword";
 
-    public static Connection getConnection() throws Exception {
+    public static Connection connect() throws Exception {
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
 }

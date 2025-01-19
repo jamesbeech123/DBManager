@@ -9,7 +9,7 @@ public class DBHandler {
 
     public void create(String name, int age) {
         String query = "INSERT INTO users (name, age) VALUES (?, ?)";
-        try (Connection connection = DBConnection.getConnection();
+        try (Connection connection = DBConnection.connect();
              PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setString(1, name);
             stmt.setInt(2, age);
@@ -22,7 +22,7 @@ public class DBHandler {
 
     public void readAll() {
         String query = "SELECT * FROM users";
-        try (Connection connection = DBConnection.getConnection();
+        try (Connection connection = DBConnection.connect();
              Statement stmt = connection.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
@@ -37,7 +37,7 @@ public class DBHandler {
 
     public void update(int id, String newName, int newAge) {
         String query = "UPDATE users SET name = ?, age = ? WHERE id = ?";
-        try (Connection connection = DBConnection.getConnection();
+        try (Connection connection = DBConnection.connect();
              PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setString(1, newName);
             stmt.setInt(2, newAge);
@@ -51,7 +51,7 @@ public class DBHandler {
 
     public void delete(int id) {
         String query = "DELETE FROM users WHERE id = ?";
-        try (Connection connection = DBConnection.getConnection();
+        try (Connection connection = DBConnection.connect();
              PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setInt(1, id);
             stmt.executeUpdate();

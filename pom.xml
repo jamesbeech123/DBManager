@@ -22,12 +22,6 @@
     </repositories>
 
     <dependencies>
-        <!-- MongoDB Driver -->
-        <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongodb-driver-sync</artifactId>
-            <version>5.3.0</version>
-        </dependency>
 
         <dependency>
             <groupId>org.postgresql</groupId>
@@ -60,12 +54,6 @@
             <version>2.15.2</version>
         </dependency>
 
-        <!-- SLF4J -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>2.0.9</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -84,8 +72,10 @@
                 <version>0.0.8</version>
                 <configuration>
                     <mainClass>dbmanager.DashboardGUI</mainClass>
+                    <executable>C:\Program Files\Java\jdk-21\bin\java.exe</executable>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 </project>
