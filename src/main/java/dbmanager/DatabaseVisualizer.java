@@ -23,7 +23,7 @@ public class DatabaseVisualizer  {
             double y = 50;
             while (rs.next()) {
                 String tableName = rs.getString("table_name");
-                TableNode tableNode = new TableNode(tableName, db.getColumnNames(tableName));
+                TableNode tableNode = new TableNode(tableName, db.getColumnNames(tableName), db.getTableData(tableName));
 
                 // Position nodes
                 tableNode.setLayoutX(x);
